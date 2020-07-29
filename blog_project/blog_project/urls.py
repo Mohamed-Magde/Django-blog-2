@@ -18,6 +18,8 @@ from django.urls import path, include
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')
+         ), path('accounts/', include('accounts.urls')),
     path('', include('blog.urls')),
-    path('post/<int:pk>/edit/', views.BlogUpdateView.as_view(), name='post_edit'),
+
 ]
